@@ -8,6 +8,6 @@ If there's things you don't understand, don't hesitate to create a Github issue 
 
 # Where to find the data
 The data product we're using comes from the University of Maryland. They use Landsat images to detect deforestation. It is hosted on the Global Forest Watch platform through the CartoDB SQL API.
-You can head directly to (globalforestwatch.org)[http://www.globalforestwatch.org/] to see the dataset visualized and download the data in their data portal.
+You can head directly to [globalforestwatch.org](http://www.globalforestwatch.org/) to see the dataset visualized and download the data in their data portal.
 
 Enjoy!
