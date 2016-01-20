@@ -215,21 +215,15 @@ def spatial_join():
             concessions_idx.insert(count,area.bounds,obj=conc)
     with fiona.open("temp/hansen/cartodb-query.shp", "r") as d:
         for point in d:
-# Retrieve date of last alert run 
-# Only include new alerts
-# Newest alert: 287
-            alert_date = point['properties']['GRID_CODE']
-            if int(alert_date) >= 280:
-                alert_point = shape(point['geometry'])
-                alert_point_raw = point['geometry']['coordinates']
-                conc_objects = [n.object for n in concessions_idx.intersection(alert_point_raw, objects=True)]
-                for i in conc_objects:
-                    conc_pol = shape(i['geometry'])
-                    if alert_point.within(conc_pol):
-                        alert_item = [i['properties']['TITULAR'], i['properties']['CONTRATO'], alert_point_raw, alert_date]
-                        print alert_item
-                        alert_file.append(alert_item)
-    
+        	alert_point = shape(point['geometry'])
+        	alert_point_raw = point['geometry']['coordinates']
+        	conc_objects = [n.object for n in concessions_idx.intersection(alert_point_raw, objects=True)]
+        	for i in conc_objects:
+        		conc_pol = shape(i['geometry'])
+        		if alert_point.within(conc_pol):
+        			alert_item = [i['properties']['TITULAR'], i['properties']['CONTRATO'], alert_point_raw, alert_date]
+        			print alert_item
+        			alert_file.append(alert_item)   
     return alert_file
 
 def alerts_to_sheet():
