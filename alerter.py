@@ -119,7 +119,7 @@ def get_files():
 
 # Still need to pull date from log in Google Sheet and put it into URL
         
-        hansen_url = "https://wri-01.cartodb.com:443/api/v2/sql?format=GEOJSON&q=SELECT*FROM%20public.per_umd_alerts%20WHERE(date>'2015-11-01')%20LIMIT%2020"
+        hansen_url = "https://wri-01.cartodb.com:443/api/v2/sql?format=SHP&q=SELECT*FROM%20public.per_umd_alerts%20WHERE(date>'2015-11-01')%20LIMIT%2020"
     	if hansen_url:
     		resp, content = service._http.request(hansen_url)
     		hansen = content
@@ -131,7 +131,7 @@ def get_files():
 
 # write shape file local file system
 def save_files():
-    shape, forma = get_files()
+    shape, hansen = get_files()
     with open('temp/protected_areas.zip', 'wb') as f:
         f.write(shape)
     with open('temp/hansen.zip', 'wb') as h:
@@ -213,7 +213,7 @@ def spatial_join():
             count +=1
             area = shape(conc['geometry'])
             concessions_idx.insert(count,area.bounds,obj=conc)
-    with fiona.open("temp/peru_day2015.shp", "r") as d:
+    with fiona.open("temp/hansen/cartodb-query.shp", "r") as d:
         for point in d:
 # Retrieve date of last alert run 
 # Only include new alerts
