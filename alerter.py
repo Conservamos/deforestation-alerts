@@ -116,32 +116,26 @@ def get_files():
                 else:
                 # The file doesn't have any content stored on Drive.
                     return None
-        for k in folder_files:
-            if k['title'] == forma_file_name:
-                forma_file_id = k['id']
-                forma_file = service.files().get(fileId=forma_file_id).execute()
-                forma_url = forma_file["downloadUrl"]
-                if forma_url:
-                    resp, content = service._http.request(forma_url)
-                    forma = content
-                    # # if resp.status == 200:
-                    # #     print 'Status: %s' % resp
-                    # else:
-                    #     print 'An error occurred: %s' % resp
-                    #     return None
-                else:
-                # The file doesn't have any content stored on Drive.
-                    return None
-    print "Done downloading files"
-    return (shape, forma)
 
-# write shape file and csv to local file system
+# Still need to pull date from log in Google Sheet and put it into URL
+        
+        hansen_url = "https://wri-01.cartodb.com:443/api/v2/sql?format=GEOJSON&q=SELECT*FROM%20public.per_umd_alerts%20WHERE(date>'2015-11-01')%20LIMIT%2020"
+    	if hansen_url:
+    		resp, content = service._http.request(hansen_url)
+    		hansen = content
+    	else:
+    		print "Something want wrong with the CartoDB API call"
+    		return None
+    print "Done downloading files"
+    return (shape, hansen)
+
+# write shape file local file system
 def save_files():
     shape, forma = get_files()
     with open('temp/protected_areas.zip', 'wb') as f:
         f.write(shape)
-    with open('temp/forma_api.csv', 'wb') as g:
-        g.write(forma)
+    with open('temp/hansen.zip', 'wb') as h:
+    	h.write(hansen)
 
 def spatial_join():
     save_files()
@@ -168,8 +162,7 @@ def spatial_join():
             schema=sink_schema,
             ) as sink:
             p_out = Proj(sink.crs)
-            for f in concessions:
-                
+            for f in concessions:            
                 try:
                     assert f['geometry']['type'] == "Polygon"
                     new_coords = []
