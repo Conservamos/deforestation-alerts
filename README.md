@@ -3,7 +3,7 @@ We use the Global Forest Watch platform to send out deforestation alerts to priv
 
 # How to reuse the code
 The code of this project consists of a script we have used to transform shape files and intersect them with alerts provided by GFW and to write alerts to a Google Sheet we use as our main working interface. We have tried to comment everything extensively so that you have an easier time running the system with your own data on your machine or on a server.
-If there are things you don't understand, don't hesitate to create a Github issue or write us an [email](mailto:conservamospornaturaleza@gmail.com)
+If there are things you don't understand, don't hesitate to create a Github issue or write us an [email](mailto:conservamospornaturaleza@gmail.com).
 
 # Where to find the data
 The data product we're using comes from the University of Maryland. They use Landsat images to detect deforestation. It is hosted on the Global Forest Watch platform through the [CartoDB SQL API](https://wri-01.cartodb.com/tables/per_umd_alerts/public/map).
