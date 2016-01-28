@@ -1,5 +1,5 @@
 # Conservamos Deforestation Alerts
-We use the Global Forest Watch platform to send out deforestation alerts to private conservation initiatives in Peru.
+We use the Global Forest Watch platform to send out deforestation alerts to private conservation initiatives in Peru. More background information can be found in this repository's Wiki.
 
 # How to reuse the code
 The code of this project consists of a script we have used to transform shape files and intersect them with alerts provided by GFW and to write alerts to a Google Sheet we use as our main working interface. We have tried to comment everything extensively so that you have an easier time running the system with your own data on your machine or on a server.
