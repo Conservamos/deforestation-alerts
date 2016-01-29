@@ -7,7 +7,12 @@ If there are things you don't understand, don't hesitate to create a Github issu
 
 # Where to find the data
 The data product we're using comes from the University of Maryland. They use Landsat images to detect deforestation. It is hosted on the Global Forest Watch platform through the [CartoDB SQL API](https://wri-01.cartodb.com/tables/per_umd_alerts/public/map).
-You can head directly to [globalforestwatch.org](http://www.globalforestwatch.org/) to see the dataset visualized. Peruvian concession data is not proper open data yet. You can find shape files of [conservation and ecotourism concessions](https://github.com/Conservamos/deforestation-alerts/tree/master/shapes/con-eco) in this repository. We will try to keep them up to date.
-If you are working in the conservation field or need data for your research, we can give you access to the final Google Sheet. Please send us an [email](mailto:conservamospornaturaleza@gmail.com) if your interested.
+You can head directly to [globalforestwatch.org](http://www.globalforestwatch.org/) to see the dataset visualized. Peruvian concession data is not proper open data yet. 
+
+
+You can find shape files of [conservation and ecotourism concessions](https://github.com/Conservamos/deforestation-alerts/tree/master/shapes/con-eco) in this repository. We will try to keep them up to date. The newest shape files of private protected areas (ACPs) and of other protected areas can be found on the Environmental Ministry's [geoserver](http://geo.sernanp.gob.pe/geoserver/). Click on "Información SERNANP" and on "Áreas Naturales Protegidas" on the left; you'll find shape files for all three types of protected areas (national, regional, private) there. 
+
+
+If you work in the conservation field or need data for your research, we can give you access to the final Google Sheet. Please send us an [email](mailto:conservamospornaturaleza@gmail.com) if your interested.
 
 Thanks for your interest. Let's protect the rainforests together!
