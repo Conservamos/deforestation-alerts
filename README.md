@@ -13,6 +13,9 @@ You can head directly to [globalforestwatch.org](http://www.globalforestwatch.or
 You can find shape files of [conservation and ecotourism concessions](https://github.com/Conservamos/deforestation-alerts/tree/master/shapes/con-eco) in this repository. We will try to keep them up to date. The newest shape files of private protected areas (ACPs) and of other protected areas can be found on the Environmental Ministry's [geoserver](http://geo.sernanp.gob.pe/geoserver/). Click on "Información SERNANP" and on "Áreas Naturales Protegidas" on the left; you'll find shape files for all three types of protected areas (national, regional, private) there. 
 
 
-If you work in the conservation field or need data for your research, we can give you access to the final Google Sheet. Please send us an [email](mailto:conservamospornaturaleza@gmail.com) if your interested.
+You can find some background information on private conservation data in Peru in a dedicated section of the [Wiki](https://github.com/Conservamos/deforestation-alerts/wiki#on-private-protected-area-data). 
+
+
+If you work in the conservation field or need data for your research, we can also give you access to the final Google Sheet. Please send us an [email](mailto:conservamospornaturaleza@gmail.com) if your interested.
 
 Thanks for your interest. Let's protect the rainforests together!
